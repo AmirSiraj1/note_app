@@ -50,4 +50,8 @@ class KStrings {
   static const String offer_4 = "  Can't delete business";
   static const String offer_5 = "  Can't remove owner from business";
   static const String choose_this_plan = "Choose this plan";
+
+  static const String logo_telebirr = 'assets/logos/telebirr.png';
+  static const String logo_cbe = 'assets/logos/cbe.png';
+  static const String logo_awash = 'assets/logos/awash.png';
 }

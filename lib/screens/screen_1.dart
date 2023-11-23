@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:note_app/shared/widget/custom_container.dart';
 import 'package:note_app/shared/widget/explanation_container.dart';
 import 'package:note_app/shared/widget/starter_container.dart';
 import 'package:note_app/utils/constants/colors.dart';
@@ -21,23 +22,31 @@ class _Screen1State extends State<Screen1> with TickerProviderStateMixin {
     return SafeArea(
         child: Scaffold(
       backgroundColor: KColors.semiWhite,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: KColors.white,
-        title: const Text(
-          KStrings.select_your_plan,
-          style: TextStyle(fontSize: 20),
-        ),
-        leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.arrow_back,
-              color: KColors.black,
-              size: 24,
-            )),
-      ),
       body: SingleChildScrollView(
         child: Column(children: [
+          CustumContainer(
+            height: height,
+            width: width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  alignment: AlignmentDirectional.centerStart,
+                  padding: const EdgeInsets.all(0),
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: KColors.black,
+                    size: 24,
+                  ),
+                ),
+                const Text(
+                  KStrings.select_your_plan,
+                  style: TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ),
           SizedBox(
             height: height * 0.03,
           ),
