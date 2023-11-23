@@ -54,4 +54,5 @@ class KStrings {
   static const String logo_telebirr = 'assets/logos/telebirr.png';
   static const String logo_cbe = 'assets/logos/cbe.png';
   static const String logo_awash = 'assets/logos/awash.png';
+  static const String logo_awash1 = 'assets/logos/awash1.png';
 }
