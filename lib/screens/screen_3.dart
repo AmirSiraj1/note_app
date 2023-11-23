@@ -174,7 +174,7 @@ class _Screen3State extends State<Screen3> {
                     controller: _dateController,
                     decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.calendar_today_rounded),
-                        labelText: 'date',
+                        labelText: KStrings.payment_date,
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         disabledBorder: OutlineInputBorder(
                             borderSide:
@@ -182,7 +182,7 @@ class _Screen3State extends State<Screen3> {
                         enabledBorder: OutlineInputBorder(
                             borderSide:
                                 BorderSide(color: KColors.gray, width: 1)),
-                        hintText: 'Date',
+                        hintText: KStrings.select_date,
                         hintStyle: TextStyle(
                             color: KColors.black, fontWeight: FontWeight.w300)),
                   )
@@ -200,12 +200,14 @@ class _Screen3State extends State<Screen3> {
                   height: height,
                   bg: KColors.white,
                   text: KStrings.cancel,
+                  color: KColors.black,
                 ),
                 MyTextButton(
                   width: width,
                   height: height,
                   bg: KColors.green,
                   text: KStrings.submit,
+                  color: KColors.white,
                 ),
               ],
             ),
@@ -239,12 +241,14 @@ class MyTextButton extends StatelessWidget {
     required this.width,
     required this.height,
     required this.bg,
+    required this.color,
     required this.text,
   }) : super(key: key);
 
   final double width;
   final double height;
   final Color bg;
+  final Color color;
   final String text;
 
   @override
@@ -259,7 +263,8 @@ class MyTextButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(15)),
       child: Text(
         text,
-        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+        style:
+            TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: color),
       ),
     );
   }
