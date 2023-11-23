@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/screens/screen_2.dart';
 import 'package:note_app/shared/widget/button.dart';
 import 'package:note_app/shared/widget/offer_widget.dart';
 import 'package:note_app/utils/constants/colors.dart';
 import 'package:note_app/utils/constants/strings.dart';
 
 Container starterContainer(
+  BuildContext context,
   double height,
   double width,
 ) {
@@ -62,17 +64,22 @@ Container starterContainer(
         SizedBox(
           height: height * 0.01,
         ),
-        oferWidget(height, KStrings.offer_1),
-        oferWidget(height, KStrings.offer_2),
-        oferWidget(height, KStrings.offer_3),
-        oferWidget(height, KStrings.offer_4),
-        oferWidget(height, KStrings.offer_5),
+        offerWidget(height, KStrings.offer_1),
+        offerWidget(height, KStrings.offer_2),
+        offerWidget(height, KStrings.offer_3),
+        offerWidget(height, KStrings.offer_4),
+        offerWidget(height, KStrings.offer_5),
         SizedBox(
           height: height * 0.05,
         ),
 
         // button
-        button()
+        button(
+          ontap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => const Screen2())));
+          },
+        )
       ],
     ),
   );

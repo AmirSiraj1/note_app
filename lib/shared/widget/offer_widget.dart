@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Container oferWidget(double height, String text) {
+Container offerWidget(double height, String text) {
   return Container(
     margin: EdgeInsets.symmetric(vertical: height * 0.009),
     child: Row(
