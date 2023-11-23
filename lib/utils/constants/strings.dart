@@ -42,8 +42,13 @@ class KStrings {
       'Our flexible pricing plans cater to all industries, allowing users to start without cost concerns. Plus, enjoy a complimentary trial with free entries to explore our platform.';
   static const String explanation1 =
       "Read all plans or contact us we will guide you better.";
-  static const String explanation2 =
-      "Transfer ETB 299 to Awash Bank account 1123324234 and Send us a Screenshot of a transaction or submit the form below.";
+
+  static const String explanation20 = "Transfer ";
+  static const String explanation21 = "ETB 299";
+  static const String explanation22 = " to Awash Bank account ";
+  static const String explanation23 = "1123324234";
+  static const String explanation24 =
+      " and Send us a Screenshot of a transaction or submit the form below.";
   static const String offer_1 = '  Full access to all books of this business';
   static const String offer_2 = '  Full access to business Settings';
   static const String offer_3 = '  Add/Remove members in busines';

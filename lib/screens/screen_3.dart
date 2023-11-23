@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:note_app/shared/widget/custom_container.dart';
 import 'package:note_app/utils/constants/colors.dart';
 import 'package:note_app/utils/constants/strings.dart';
@@ -73,10 +75,21 @@ class _Screen3State extends State<Screen3> {
               decoration: const BoxDecoration(
                   color: KColors.gray,
                   borderRadius: BorderRadius.all(Radius.circular(15))),
-              child: const Text(
-                KStrings.explanation2,
-                style: TextStyle(fontSize: 17),
-              ),
+              child: RichText(
+                  textAlign: TextAlign.start,
+                  text: const TextSpan(
+                      style: TextStyle(fontSize: 17, color: KColors.black),
+                      children: [
+                        TextSpan(text: KStrings.explanation20),
+                        TextSpan(
+                            text: KStrings.explanation21,
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: KStrings.explanation22),
+                        TextSpan(
+                            text: KStrings.explanation23,
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: KStrings.explanation24),
+                      ])),
             ),
             // attach a screen shot
             Container(
@@ -176,23 +189,28 @@ class _Screen3State extends State<Screen3> {
                 ],
               ),
             ),
-
+            SizedBox(
+              height: height * 0.03,
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: width * 0.05, vertical: height * 0.02),
-                  margin: EdgeInsets.symmetric(horizontal: width * 0.05),
-                  decoration: BoxDecoration(
-                      color: KColors.white,
-                      border: Border.all(color: KColors.gray, width: 1),
-                      borderRadius: BorderRadius.circular(15)),
-                  child: const Text(
-                    "Cancel",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                )
+                MyTextButton(
+                  width: width,
+                  height: height,
+                  bg: KColors.white,
+                  text: KStrings.cancel,
+                ),
+                MyTextButton(
+                  width: width,
+                  height: height,
+                  bg: KColors.green,
+                  text: KStrings.submit,
+                ),
               ],
+            ),
+            SizedBox(
+              height: height * 0.05,
             )
           ],
         ),
@@ -212,6 +230,38 @@ class _Screen3State extends State<Screen3> {
         _dateController.text = picked.toString().split(" ")[0];
       });
     }
+  }
+}
+
+class MyTextButton extends StatelessWidget {
+  const MyTextButton({
+    Key? key,
+    required this.width,
+    required this.height,
+    required this.bg,
+    required this.text,
+  }) : super(key: key);
+
+  final double width;
+  final double height;
+  final Color bg;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+          horizontal: width * 0.1, vertical: height * 0.02),
+      margin: EdgeInsets.symmetric(horizontal: width * 0.05),
+      decoration: BoxDecoration(
+          color: bg,
+          border: Border.all(color: KColors.gray, width: 1),
+          borderRadius: BorderRadius.circular(15)),
+      child: Text(
+        text,
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+      ),
+    );
   }
 }
 
